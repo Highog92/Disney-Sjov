@@ -1,0 +1,30 @@
+body{
+    background: linear-gradient(90deg, rgba(36,63,135,255) 0%, rgba(11,14,53,255) 100%);
+    color: rgba(255,255,255,255);
+    font-family:'Courier New', Courier, monospace, Walter;
+    margin-left: 10%;
+}
+
+h1{
+    font-family:'Courier New', Courier, monospace, Walter;
+}
+
+h1,h2,h3{
+    /* margin-left: 20%; */
+}
+
+button{
+    margin: 10px;
+}
+
+section{ 
+    display: flex;
+    flex-direction: column;
+}
+
+img{ 
+    width: 30vw;
+    /* margin-left: 20%; */
+}
+
+
