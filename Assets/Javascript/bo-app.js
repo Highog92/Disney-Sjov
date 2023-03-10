@@ -3,10 +3,13 @@ let myPage = 1;
 const myAppElement = document.getElementById('myApp');
 
 // entry point
-
-
-
+loadingScreen();
+setUpShowAllButton();
+setupSearchForm();
 fetchOneCharacter(4703);
+
+
+
 function fetchOneCharacter(myId) {
     let URI = `https://api.disneyapi.dev/characters/${myId}`
 
@@ -18,6 +21,7 @@ function fetchOneCharacter(myId) {
         } else {
             alert("api error du får lige mickey mouse");
             fetchOneCharacter(4703);
+
         }
 
 
@@ -32,6 +36,9 @@ function fetchOneCharacter(myId) {
         console.error(err.message);
 
     }
+
+
+
     );
 
 }
@@ -60,14 +67,12 @@ function showCharacter(myData) {
 
 }
 
-
-loadingScreen();
 // loading screen  kaldes når vi henter data
 function loadingScreen() {
     myAppElement.innerHTML = "<h2>Loading...</h2>";
 }
 
-setUpShowAllButton();
+
 function setUpShowAllButton() {
 
     let showAllButton = document.getElementById('showAllButton');
@@ -78,7 +83,7 @@ function setUpShowAllButton() {
 }
 
 
-setupSearchForm();
+
 function setupSearchForm() {
 
     let searchButton = document.getElementById('searchButton');
@@ -208,9 +213,9 @@ function showAll(myData) {
 function makePageButtons() {
 
     let prevButton = document.createElement('button');
-    prevButton.innerText = 'Prev';
+    prevButton.innerText = 'prev';
     prevButton.addEventListener('click', (e) => {
-        myPage--; //Lader Prev knappen gå én side tilbage
+        myPage--;
         if (myPage < 1) {
             myPage = 1;
         }
@@ -218,9 +223,9 @@ function makePageButtons() {
     });
 
     let nextButton = document.createElement('button');
-    nextButton.innerText = 'Next';
+    nextButton.innerText = 'next';
     nextButton.addEventListener('click', (e) => {
-        myPage++; //lader Next knappen gå én side frem
+        myPage++;
         if (myPage >= 149) {
             myPage = 149;
         }
